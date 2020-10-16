@@ -16,14 +16,58 @@ const styles = StyleSheet.create({
         color: 'red',
     },
     inputField: {
+        marginRight:40,
+        marginLeft:40,
+        marginTop:10,
+        paddingTop:10,
+        paddingBottom:10,
+        backgroundColor:'#fff',
+        borderRadius:5,
         borderWidth: 1,
-        margin: 10,
-        padding: 10,
-        borderColor: '#002f25',
+        borderColor: '#002f25'
     },
     header: {
+        marginRight:40,
+        marginLeft:40,
+        marginTop:10,
+        paddingTop:10,
+        paddingBottom:15,
+        backgroundColor:'#7c9c8c',
+        borderRadius:5,
+        borderWidth: 1,
+        borderColor: '#dce5e3'
+    },
+    logInButton:{
+        marginRight:40,
+        marginLeft:40,
+        marginTop:10,
+        paddingTop:10,
+        paddingBottom:10,
+        backgroundColor:'#002f25',
+        borderRadius:5,
+        borderWidth: 1,
+        borderColor: '#fff'
+    },
+    logInText:{
+        textAlign:'center',
+        paddingLeft : 10,
+        paddingRight : 10,
+        color:'#fff'
+    },
+    logInTextHeader:{
+        textAlign:'center',
+        paddingLeft : 10,
+        paddingRight : 10,
+        color:'#fff',
         fontSize: 40,
     },
+    fillContainer:{
+        marginRight:40,
+        marginLeft:40,
+        marginTop:10,
+        paddingTop:10,
+        paddingBottom:100,
+    }
 });
 
 export default class SignUpForm extends React.Component {
@@ -41,8 +85,10 @@ export default class SignUpForm extends React.Component {
     clearError = () => this.setState({ errorMessage: null });
 
     handleChangeEmail = email => this.setState({ email });
+
     handleChangePassword = password => this.setState({ password });
 
+    // Håndterer når bruger vil logge ind. laver en const med 2 variabler
     handleSubmit = async () => {
         const { email, password } = this.state;
         try {
@@ -65,7 +111,10 @@ export default class SignUpForm extends React.Component {
         }
         return (
             <View>
-                <Text style={styles.header}>Login up</Text>
+                <Text style={styles.fillContainer}></Text>
+                <View style={styles.header}>
+                <Text style={styles.logInTextHeader}>Login</Text>
+                </View>
                 <TextInput
                     placeholder="email"
                     value={email}
@@ -92,14 +141,15 @@ export default class SignUpForm extends React.Component {
         if (isLoading) {
             return <ActivityIndicator />;
         }
-        return <View>
-            <Button onPress={this.handleSubmit}
-                    title="Login"
-                    color ='#002f25'
-            />
+        return (
+                <TouchableOpacity
+                    style={styles.logInButton}
+                    onPress={this.handleSubmit}
+                    underlayColor='#fff'>
+                    <Text style={styles.logInText}>Sign In!</Text>
+                </TouchableOpacity>
+            ) ;
 
 
-
-                </View>;
     };
 }
