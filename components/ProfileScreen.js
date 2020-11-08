@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import CameraView from "./CameraView";
 import firebase from 'firebase';
 import MapView, { Marker } from 'react-native-maps';
 import {View,
@@ -137,32 +137,26 @@ export default class ProfileScreen extends React.Component {
             return null;
         }
         return (
+
             <ScrollView>
-            <View style={styles.container}>
-                    <Image source={{uri: 'https://cache.nichehuset.dk/annoncer/jobannoncer/images/annoncoerer/logoer_thumbnails/319/743.png'}}
-                           style={{width: 200, height: 177}} />
+                <View style={styles.container}>
+                <Image source={{uri: 'https://cache.nichehuset.dk/annoncer/jobannoncer/images/annoncoerer/logoer_thumbnails/319/743.png'}}
+                       style={{width: 200, height: 177}} />
                 <Text style={styles.welcomeHeader}>Miljøstyrelsen</Text>
-                    <Text style={styles.emailText}>You are logged in as:</Text>
-
+                <Text style={styles.emailText}>Current Ornithologist</Text>
                 <Text style={styles.loggedInWithText}>{user.email}</Text>
+                </View>
 
-                    <ScrollView style={styles.scrollView}>
-                    <Text style={styles.otherText}>
-                        You have 3 recently accquired achievements (badges)!
-                    </Text>
-                        <Image source={{uri: 'https://images.vexels.com/media/users/3/137591/isolated/lists/6b1c28ded2a1a4c3b8c971ac95648ea7-fishing-fish-animal.png'}}
-                               style={{width: 200, height: 177, right:30}} />
-                        <Image source={{uri: 'https://img2.pngio.com/animal-creative-dog-pet-shape-wolf-icon-2854-free-icons-wolf-logos-png-256_256.png'}}
-                               style={{width: 200, height: 177, right:30}} />
-                        <Image source={{uri: 'https://images.vexels.com/media/users/3/198912/isolated/lists/20c329a21dd73d43112db9a9e85aa463-mandala-ant-head-blue.png'}}
-                               style={{width: 200, height: 177, right:30}} />
-                        <Image source={{uri: ''}}
-                               style={{width: 200, height: 40, right:30}} />
+                <CameraView/>
+                <View style={styles.container}>
+                    <Text style={styles.emailText}>Credit To:</Text>
+                    <Text style={styles.loggedInWithText}>{user.email}</Text>
 
-                    </ScrollView>
+                </View>
 
-
+            <View style={styles.container}>
                 <View>
+
                     <Text style={styles.fillContainer}></Text>
                     <View style={styles.header}>
                         <Text style={styles.mapViewTextHeader}>Animal Safari</Text>

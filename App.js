@@ -7,11 +7,13 @@ import UserScreen from './components/UserScreen';
 import firebase from 'firebase';
 import LoginForm from "./components/LoginForm";
 import ProfileScreen from "./components/ProfileScreen";
+import CameraView from "./components/CameraView";
 
 import { Card } from 'react-native-paper';
 import { AntDesign } from '@expo/vector-icons';
 import { createAppContainer } from 'react-navigation';
 import MapViewLocation from "./components/MapViewLocation";
+import {Camera} from "expo/build/removed.web";
 // Laver en stacknavigator og tilføjer Userscreen
 const StackNavigator = createStackNavigator(
     {
@@ -50,6 +52,16 @@ const TabNavigator = createBottomTabNavigator({
             )
         },
     },
+    // Tilføjer Et imagepicker view
+    add2:{screen: CameraView,
+        navigationOptions: {
+            tabBarLabel:"CameraView",
+            tabBarIcon: ({tintColor}) => (
+                <AntDesign name={"camera"} size={30} color={{tintColor}}/>
+            )
+        },
+    },
+
 
 });
 // Indsætter TabNavigatoren i en appcontainer.
