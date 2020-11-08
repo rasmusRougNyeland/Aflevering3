@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Button, SafeAreaView } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView, Image } from 'react-native';
 import Constants from 'expo-constants';
 import MapView, { Marker } from 'react-native-maps';
 import {Accuracy} from "expo-location";
 import * as Permissions from 'expo-permissions';
 import * as Location from 'expo-location';
-
 
 
 export default class MapViewLocation extends React.Component {
@@ -127,20 +126,38 @@ export default class MapViewLocation extends React.Component {
                     onLongPress={this.handleLongPress}>
 
                     <Marker
-                        coordinate={{ latitude: 55.676200, longitude: 12.569420 }}
-                        title="Påfugl"
-                        description="Påfuglen er en fasanfugl. Fuglen yngler i Indien og på Sri Lanka, men er indført og udsat mange steder i verden. I Danmark fik et par fritgående påfugle på Sejerø deres første kuld kyllinger i foråret 1982, og der er nu en fast bestand på øen"
-                    />
+                        coordinate={{ latitude: 55.7631035, longitude: 12.4977436 }}
+                        title="Lille flagspætte"
+                        description=" Orden: Lille flagspætte
+                                    Status: Truet
+                                    Beskrivelse: Lille flagspætte er en meget
+                                    karakteristisk mejse med sin sort- og hvidspættede top og den sort-hvide hovedtegning. Fjerdragten er i øvrigt
+                                    karakteriseret ved en mørkt gråbrun overside og en lysegrå underside.">
+                        <Image source={{uri: 'https://i.pinimg.com/originals/e6/ac/1f/e6ac1f4030521141f1ebaa50ad02a8e0.png'}}
+                               style={{width: 40, height: 40}} />
+                    </Marker>
                     <Marker
-                        coordinate={{ latitude: 55.673032, longitude: 12.568757 }}
-                        title="Egern"
-                        description="Egern, også kaldet europæisk egern eller almindeligt egern, er en gnaver i egernfamilien med en kropslængde på omkring 22 cm. Den store hale måler 17 cm. Det er almindeligt forekommende i Danmark, både i en rød, brun og sort farvevariant"
-                    />
+                        coordinate={{ latitude: 55.7491107, longitude: 12.519411 }}
+                        title="Skægmejse"
+                        description=" Orden: Spurvefugl
+                                    Status: Ikke Truet
+                                    Beskrivelse: Topmejsen er en meget
+                                    karakteristisk mejse med sin sort- og hvidspættede top og den sort-hvide hovedtegning. Fjerdragten er i øvrigt
+                                    karakteriseret ved en mørkt gråbrun overside og en lysegrå underside.">
+                        <Image source={{uri: 'https://i.pinimg.com/originals/e6/ac/1f/e6ac1f4030521141f1ebaa50ad02a8e0.png'}}
+                               style={{width: 40, height: 40}} />
+                    </Marker>
                     <Marker
-                        coordinate={{ latitude: 55.674000, longitude: 12.598110 }}
-                        title="Bisamrotte"
-                        description="En bisamrotte måler fra snudespids til halerod ca. 30-40 cm, halen bliver op til 28 cm lang og den kan veje op til 1,8 kg."
-                    />
+                        coordinate={{ latitude: 55.7584811, longitude: 12.5346674 }}
+                        title="Topmejse"
+                        description=" Orden: Spurvefugl
+                                    Status: Truet
+                                    Beskrivelse: Skægmejse er en meget
+                                    karakteristisk mejse med sin sort- og hvidspættede top og den sort-hvide hovedtegning. Fjerdragten er i øvrigt
+                                    karakteriseret ved en mørkt gråbrun overside og en lysegrå underside.">
+                        <Image source={{uri: 'https://i.pinimg.com/originals/e6/ac/1f/e6ac1f4030521141f1ebaa50ad02a8e0.png'}}
+                               style={{width: 40, height: 40}} />
+                    </Marker>
 
                     {userMarkerCoordinates.map((coordinate, index) => (
 
