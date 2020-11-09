@@ -8,7 +8,7 @@ import firebase from 'firebase';
 import LoginForm from "./components/LoginForm";
 import ProfileScreen from "./components/ProfileScreen";
 import CameraView from "./components/CameraView";
-
+import Artbogen from "./components/Artbogen";
 import { Card } from 'react-native-paper';
 import { AntDesign } from '@expo/vector-icons';
 import { createAppContainer } from 'react-navigation';
@@ -48,20 +48,29 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel:"MapView",
             tabBarIcon: ({tintColor}) => (
-                <AntDesign name={"settings"} size={30} color={{tintColor}}/>
+                <AntDesign name={"shrink"} size={30} color={{tintColor}}/>
             )
         },
     },
     // Tilføjer Et imagepicker view
     add2:{screen: CameraView,
         navigationOptions: {
-            tabBarLabel:"CameraView",
+            tabBarLabel:"Upload",
             tabBarIcon: ({tintColor}) => (
                 <AntDesign name={"camera"} size={30} color={{tintColor}}/>
             )
         },
     },
 
+    // Tilføjer Et imagepicker view
+    add3:{screen: Artbogen,
+        navigationOptions: {
+            tabBarLabel:"Artbook",
+            tabBarIcon: ({tintColor}) => (
+                <AntDesign name={"book"} size={30} color={{tintColor}}/>
+            )
+        },
+    },
 
 });
 // Indsætter TabNavigatoren i en appcontainer.
