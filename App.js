@@ -13,7 +13,7 @@ import { Card } from 'react-native-paper';
 import { AntDesign } from '@expo/vector-icons';
 import { createAppContainer } from 'react-navigation';
 import MapViewLocation from "./components/MapViewLocation";
-import {Camera} from "expo/build/removed.web";
+
 // Laver en stacknavigator og tilføjer Userscreen
 const StackNavigator = createStackNavigator(
     {

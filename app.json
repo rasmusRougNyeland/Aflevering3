@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "OpgaveObli3",
+    "name": "Innovationsprojekt 2",
     "slug": "OpgaveObli3",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,6 +21,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Innovationsprojekt 2 af Rasmus Roug Nyeland",
+    "githubUrl": "https://github.com/rasmusRougNyeland/Aflevering3.git"
   }
 }
